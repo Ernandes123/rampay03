@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#06080f;color:#eef0f7;font-family:'Outfit',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#7ff0a6;text-decoration:none}
+a:hover{color:#b4f7cb}
+details summary::-webkit-details-marker{display:none}
+details summary{list-style:none}
+details[open] .faq-plus{transform:rotate(45deg)}
+</style>
+</helmet>
+<div style="min-height:100vh;background:radial-gradient(1200px 700px at 15% -10%, #16226b 0%, transparent 60%), radial-gradient(900px 600px at 100% 30%, #0f1a52 0%, transparent 60%), #06080f;overflow-x:hidden">
+
+<header style="max-width:1200px;margin:0 auto;padding:22px clamp(20px,4vw,40px);display:flex;align-items:center;justify-content:space-between;gap:16px">
+  <div style="display:flex;align-items:center;gap:10px;font-weight:600;font-size:22px;letter-spacing:-0.02em">
+    <span style="width:28px;height:28px;border-radius:9px;background:linear-gradient(135deg,#7ff0a6,#3fbf6e);display:block"></span>
+    Rampay
+  </div>
+  <a href="#oferta" style="padding:10px 18px;border-radius:999px;border:1px solid rgba(150,170,255,.25);background:rgba(30,40,90,.4);color:#eef0f7;font-size:14px">Quero abrir minha conta</a>
+</header>
+
+<section data-screen-label="Hero" style="max-width:1200px;margin:0 auto;padding:clamp(40px,7vw,90px) clamp(20px,4vw,40px) 80px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:56px;align-items:center">
+  <div style="display:flex;flex-direction:column;gap:28px">
+    <div style="display:inline-flex;align-self:flex-start;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:rgba(30,40,90,.45);border:1px solid rgba(150,170,255,.2);font-size:13px;color:#aab3d6">
+      <span style="width:7px;height:7px;border-radius:50%;background:#7ff0a6;display:block"></span>Empresa regulada • 10 anos de mercado
+    </div>
+    <sc-if value="{{ hA }}" hint-placeholder-val="{{ true }}">
+      <h1 style="margin:0;font-weight:400;font-size:clamp(40px,5.6vw,72px);line-height:1.02;letter-spacing:-0.035em;text-wrap:balance">Tem dinheiro parado e não sabe onde investir?</h1>
+    </sc-if>
+    <sc-if value="{{ hB }}" hint-placeholder-val="{{ false }}">
+      <h1 style="margin:0;font-weight:400;font-size:clamp(40px,5.6vw,72px);line-height:1.02;letter-spacing:-0.035em;text-wrap:balance">Mais de 10 mil clientes investem com a Rampay</h1>
+    </sc-if>
+    <sc-if value="{{ hC }}" hint-placeholder-val="{{ false }}">
+      <h1 style="margin:0;font-weight:400;font-size:clamp(40px,5.6vw,72px);line-height:1.02;letter-spacing:-0.035em;text-wrap:balance">Até 16% ao ano* com gestão profissional</h1>
+    </sc-if>
+    <p style="margin:0;font-size:clamp(17px,1.5vw,20px);line-height:1.55;color:#b9c0dc;font-weight:300;max-width:560px;text-wrap:pretty">Você não precisa entender de mercado financeiro. A Rampay tem 10 anos de experiência e mais de R$ 100 milhões sob gestão para cuidar do seu dinheiro com transparência.</p>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <a href="#oferta" style="align-self:flex-start;padding:18px 30px;border-radius:999px;background:linear-gradient(90deg,#8af5b0,#4fd383);color:#06200f;font-weight:600;font-size:17px;box-shadow:0 10px 40px rgba(79,211,131,.25)">
+        <sc-if value="{{ cta1 }}" hint-placeholder-val="{{ true }}">Quero abrir minha conta</sc-if>
+        <sc-if value="{{ cta2 }}" hint-placeholder-val="{{ false }}">Começar a investir hoje</sc-if>
+      </a>
+      <div style="font-size:14px;color:#8e97bb">Cadastro rápido • Atendimento humano • Empresa regulada</div>
+    </div>
+    <p style="margin:0;font-size:13px;line-height:1.6;color:#8e97bb;max-width:560px;border-top:1px solid rgba(150,170,255,.14);padding-top:16px">* Rentabilidade de até 16% ao ano. <span style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11.5px;padding:1px 7px;border:1px dashed rgba(167,180,255,.5);border-radius:6px;color:#b9c3ff;background:rgba(120,140,255,.08)">[INSERIR: base do número (histórico dos últimos X meses), fonte e data]</span>. Rentabilidade passada não garante rentabilidade futura.</p>
+  </div>
+
+  <div style="position:relative;padding:22px;border-radius:32px;background:linear-gradient(180deg,rgba(38,54,140,.45),rgba(12,16,40,.55));border:1px solid rgba(150,170,255,.2);box-shadow:0 30px 80px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.06);backdrop-filter:blur(20px);display:flex;flex-direction:column;gap:14px">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:4px 6px 8px">
+      <span style="font-size:15px;color:#b9c0dc">Rampay em números</span>
+      <span style="font-size:12px;padding:5px 12px;border-radius:999px;background:#eef0f7;color:#0a0e22;font-weight:500">Registro nº 1002233</span>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+      <div style="padding:20px;border-radius:22px;background:rgba(20,28,70,.6);border:1px solid rgba(150,170,255,.16);display:flex;flex-direction:column;gap:22px">
+        <span style="width:38px;height:38px;border-radius:50%;border:1px solid rgba(150,170,255,.3);display:flex;align-items:center;justify-content:center"><span style="width:10px;height:10px;border-radius:50%;background:#7ff0a6;display:block"></span></span>
+        <div><div style="font-size:14px;color:#8e97bb">Clientes</div><div style="font-size:34px;letter-spacing:-0.02em">+10 mil</div></div>
+      </div>
+      <div style="padding:20px;border-radius:22px;background:rgba(20,28,70,.6);border:1px solid rgba(150,170,255,.16);display:flex;flex-direction:column;gap:22px">
+        <span style="width:38px;height:38px;border-radius:50%;border:1px solid rgba(150,170,255,.3);display:flex;align-items:center;justify-content:center"><span style="width:10px;height:10px;border-radius:2px;background:#9fb0ff;display:block"></span></span>
+        <div><div style="font-size:14px;color:#8e97bb">Anos de mercado</div><div style="font-size:34px;letter-spacing:-0.02em">10</div></div>
+      </div>
+    </div>
+    <div style="padding:22px;border-radius:22px;background:linear-gradient(90deg,rgba(127,240,166,.14),rgba(20,28,70,.6));border:1px solid rgba(127,240,166,.25);display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap">
+      <div><div style="font-size:14px;color:#a9d9bb">Sob gestão</div><div style="font-size:clamp(36px,4vw,48px);letter-spacing:-0.03em">+R$ 100 mi</div></div>
+      <div style="font-size:13px;color:#8e97bb;max-width:180px;text-align:right">Gestão profissional com transparência</div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Abertura" style="max-width:900px;margin:0 auto;padding:80px clamp(20px,4vw,40px);display:flex;flex-direction:column;gap:26px">
+  <p style="margin:0;font-size:clamp(26px,3.2vw,40px);line-height:1.25;letter-spacing:-0.02em;text-wrap:pretty">Você trabalha duro pelo seu dinheiro. Mas ele está parado, ou rendendo menos do que poderia, porque investir parece complicado.</p>
+  <p style="margin:0;font-size:clamp(17px,1.6vw,20px);line-height:1.6;color:#b9c0dc;font-weight:300;text-wrap:pretty">Muita gente adia a decisão por medo de errar. Cada mês de indecisão é um mês em que o seu dinheiro não trabalha por você.</p>
+  <p style="margin:0;font-size:clamp(17px,1.6vw,20px);line-height:1.6;color:#b9c0dc;font-weight:300;text-wrap:pretty">A Rampay existe pra resolver isso. Você escolhe quanto investir e a nossa gestão profissional cuida do resto, com regulação, clareza e acompanhamento de perto.</p>
+</section>
+
+<section data-screen-label="Dor" style="max-width:1200px;margin:0 auto;padding:60px clamp(20px,4vw,40px) 90px;display:flex;flex-direction:column;gap:40px">
+  <div style="display:flex;flex-direction:column;gap:14px;max-width:720px">
+    <h2 style="margin:0;font-weight:400;font-size:clamp(30px,3.6vw,46px);letter-spacing:-0.03em;line-height:1.1">Se você não sabe onde investir, não está sozinho.</h2>
+    <p style="margin:0;font-size:18px;line-height:1.6;color:#b9c0dc;font-weight:300">Na maioria das vezes o problema não é falta de dinheiro, e sim falta de clareza.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px">
+    <div style="padding:26px;border-radius:24px;background:rgba(20,28,70,.4);border:1px solid rgba(150,170,255,.14);font-size:18px;line-height:1.45">Você abre o app do banco e fica sem saber o que escolher.</div>
+    <div style="padding:26px;border-radius:24px;background:rgba(20,28,70,.4);border:1px solid rgba(150,170,255,.14);font-size:18px;line-height:1.45">Já ouviu cinco opiniões diferentes e saiu mais confuso.</div>
+    <div style="padding:26px;border-radius:24px;background:rgba(20,28,70,.4);border:1px solid rgba(150,170,255,.14);font-size:18px;line-height:1.45">Deixa o dinheiro na conta “só por enquanto”.</div>
+    <div style="padding:26px;border-radius:24px;background:rgba(20,28,70,.4);border:1px solid rgba(150,170,255,.14);font-size:18px;line-height:1.45">Tem medo de investir errado e se arrepender.</div>
+    <div style="padding:26px;border-radius:24px;background:rgba(20,28,70,.4);border:1px solid rgba(150,170,255,.14);font-size:18px;line-height:1.45">Sente que todo mundo sabe algo que você não sabe.</div>
+    <div style="padding:26px;border-radius:24px;background:rgba(20,28,70,.4);border:1px solid rgba(150,170,255,.14);font-size:18px;line-height:1.45">Quer que o dinheiro cresça, mas sem virar um segundo emprego.</div>
+  </div>
+</section>
+
+<section data-screen-label="Solução" style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,40px) 90px">
+  <div style="padding:clamp(28px,5vw,64px);border-radius:36px;background:linear-gradient(180deg,rgba(38,54,140,.45),rgba(12,16,40,.5));border:1px solid rgba(150,170,255,.2);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:48px">
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <div style="font-size:14px;color:#7ff0a6;letter-spacing:.04em">A SOLUÇÃO</div>
+      <h2 style="margin:0;font-weight:400;font-size:clamp(28px,3.2vw,42px);letter-spacing:-0.03em;line-height:1.15;text-wrap:pretty">A Rampay é uma plataforma de investimentos em fundos com gestão profissional, feita pra quem quer investir sem precisar virar especialista.</h2>
+      <span style="align-self:flex-start;font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.5;padding:10px 14px;border:1px dashed rgba(167,180,255,.5);border-radius:10px;color:#b9c3ff;background:rgba(120,140,255,.08)">[INSERIR: nome do mecanismo/estratégia do fundo e como ele gera retorno, em 2 a 3 linhas]</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:22px;justify-content:flex-end">
+      <p style="margin:0;font-size:19px;line-height:1.6;color:#c8cee6;font-weight:300">Funciona assim: você define seu perfil, escolhe o aporte e acompanha tudo com transparência. Quem toma as decisões de gestão é um time com 10 anos de mercado.</p>
+      <p style="margin:0;font-size:22px;line-height:1.4">Sem planilha, sem achismo, sem depender de dica de internet.</p>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Benefícios" style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,40px) 100px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:48px">
+  <h2 style="margin:0;font-weight:400;font-size:clamp(30px,3.6vw,46px);letter-spacing:-0.03em;line-height:1.1">O que muda quando você investe com a Rampay</h2>
+  <div style="display:flex;flex-direction:column">
+    <div style="display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px dashed rgba(150,170,255,.18);font-size:18px;line-height:1.45"><span style="flex:none;width:22px;height:22px;margin-top:2px;border-radius:50%;background:#5bd88a;display:flex;align-items:center;justify-content:center;color:#06200f;font-size:13px;font-weight:600">✓</span>Você deixa de adiar a decisão e coloca o dinheiro pra trabalhar.</div>
+    <div style="display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px dashed rgba(150,170,255,.18);font-size:18px;line-height:1.45"><span style="flex:none;width:22px;height:22px;margin-top:2px;border-radius:50%;background:#5bd88a;display:flex;align-items:center;justify-content:center;color:#06200f;font-size:13px;font-weight:600">✓</span>Você investe sem precisar estudar o mercado.</div>
+    <div style="display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px dashed rgba(150,170,255,.18);font-size:18px;line-height:1.45"><span style="flex:none;width:22px;height:22px;margin-top:2px;border-radius:50%;background:#5bd88a;display:flex;align-items:center;justify-content:center;color:#06200f;font-size:13px;font-weight:600">✓</span>Você acompanha seus resultados de forma clara, sem letra miúda.</div>
+    <div style="display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px dashed rgba(150,170,255,.18);font-size:18px;line-height:1.45"><span style="flex:none;width:22px;height:22px;margin-top:2px;border-radius:50%;background:#5bd88a;display:flex;align-items:center;justify-content:center;color:#06200f;font-size:13px;font-weight:600">✓</span>Você conta com uma empresa regulada, com 10 anos de história.</div>
+    <div style="display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px dashed rgba(150,170,255,.18);font-size:18px;line-height:1.45"><span style="flex:none;width:22px;height:22px;margin-top:2px;border-radius:50%;background:#5bd88a;display:flex;align-items:center;justify-content:center;color:#06200f;font-size:13px;font-weight:600">✓</span>Você fala com uma pessoa de verdade quando tem dúvida.</div>
+    <div style="display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px dashed rgba(150,170,255,.18);font-size:18px;line-height:1.45"><span style="flex:none;width:22px;height:22px;margin-top:2px;border-radius:50%;background:#5bd88a;display:flex;align-items:center;justify-content:center;color:#06200f;font-size:13px;font-weight:600">✓</span><span>Você pode começar no seu ritmo: <span style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:13px;padding:1px 7px;border:1px dashed rgba(167,180,255,.5);border-radius:6px;color:#b9c3ff;background:rgba(120,140,255,.08)">[INSERIR aporte mínimo]</span>.</span></div>
+    <div style="display:flex;gap:16px;align-items:flex-start;padding:18px 0;font-size:18px;line-height:1.45"><span style="flex:none;width:22px;height:22px;margin-top:2px;border-radius:50%;background:#5bd88a;display:flex;align-items:center;justify-content:center;color:#06200f;font-size:13px;font-weight:600">✓</span>Você investe com o mesmo cuidado, seja iniciante ou experiente.</div>
+  </div>
+</section>
+
+<section data-screen-label="Prova social" style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,40px) 100px;display:flex;flex-direction:column;gap:20px">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:14px">
+    <div style="padding:28px;border-radius:26px;background:rgba(20,28,70,.5);border:1px solid rgba(150,170,255,.16)"><div style="font-size:clamp(40px,4.5vw,56px);letter-spacing:-0.03em">+10 mil</div><div style="color:#8e97bb;font-size:16px">clientes</div></div>
+    <div style="padding:28px;border-radius:26px;background:rgba(20,28,70,.5);border:1px solid rgba(150,170,255,.16)"><div style="font-size:clamp(40px,4.5vw,56px);letter-spacing:-0.03em">+R$ 100 mi</div><div style="color:#8e97bb;font-size:16px">sob gestão</div></div>
+    <div style="padding:28px;border-radius:26px;background:rgba(20,28,70,.5);border:1px solid rgba(150,170,255,.16)"><div style="font-size:clamp(40px,4.5vw,56px);letter-spacing:-0.03em">10 anos</div><div style="color:#8e97bb;font-size:16px">de mercado</div></div>
+  </div>
+  <div style="font-size:15px;color:#aab3d6;display:flex;flex-wrap:wrap;gap:8px;align-items:center">Registro: Rampay, registro nº 1002233 <span style="font-family:'JetBrains Mono',monospace;font-size:12px;padding:1px 7px;border:1px dashed rgba(167,180,255,.5);border-radius:6px;color:#b9c3ff;background:rgba(120,140,255,.08)">[INSERIR: órgão — CVM e/ou Banco Central]</span></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px;margin-top:20px">
+    <div style="min-height:200px;padding:24px;border-radius:24px;border:1px dashed rgba(167,180,255,.35);background:repeating-linear-gradient(135deg,rgba(120,140,255,.05) 0 10px,transparent 10px 20px);font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.6;color:#b9c3ff">[INSERIR DEPOIMENTO 1 — nome, perfil e resultado específico, com autorização]</div>
+    <div style="min-height:200px;padding:24px;border-radius:24px;border:1px dashed rgba(167,180,255,.35);background:repeating-linear-gradient(135deg,rgba(120,140,255,.05) 0 10px,transparent 10px 20px);font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.6;color:#b9c3ff">[INSERIR DEPOIMENTO 2 — foco em quem era iniciante]</div>
+    <div style="min-height:200px;padding:24px;border-radius:24px;border:1px dashed rgba(167,180,255,.35);background:repeating-linear-gradient(135deg,rgba(120,140,255,.05) 0 10px,transparent 10px 20px);font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.6;color:#b9c3ff">[INSERIR DEPOIMENTO 3 — foco em quem já investia em outro lugar]</div>
+  </div>
+  <div style="padding:22px;border-radius:20px;border:1px dashed rgba(167,180,255,.3);text-align:center;font-family:'JetBrains Mono',monospace;font-size:13px;color:#b9c3ff">[INSERIR: logos de mídia ou parceiros, se existirem]</div>
+</section>
+
+<section id="oferta" data-screen-label="Oferta" style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,40px) 100px">
+  <div style="padding:clamp(28px,5vw,64px);border-radius:36px;background:linear-gradient(180deg,rgba(38,54,140,.5),rgba(12,16,40,.6));border:1px solid rgba(150,170,255,.22);display:flex;flex-direction:column;gap:48px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:48px">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <h2 style="margin:0;font-weight:400;font-size:clamp(28px,3.2vw,40px);letter-spacing:-0.03em">O que entra</h2>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="padding:16px 20px;border-radius:999px;background:rgba(10,14,34,.55);border:1px solid rgba(150,170,255,.16);font-size:17px">Acesso aos fundos da Rampay com gestão profissional</div>
+          <div style="padding:16px 20px;border-radius:999px;background:rgba(10,14,34,.55);border:1px solid rgba(150,170,255,.16);font-size:17px">Análise do seu perfil de investidor</div>
+          <div style="padding:16px 20px;border-radius:999px;background:rgba(10,14,34,.55);border:1px solid rgba(150,170,255,.16);font-size:17px">Acompanhamento dos seus investimentos</div>
+          <div style="padding:16px 20px;border-radius:999px;background:rgba(10,14,34,.55);border:1px solid rgba(150,170,255,.16);font-size:17px">Atendimento com especialista</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <h2 style="margin:0;font-weight:400;font-size:clamp(28px,3.2vw,40px);letter-spacing:-0.03em">Como funciona</h2>
+        <div style="display:flex;flex-direction:column">
+          <div style="display:grid;grid-template-columns:52px 1fr;gap:14px;padding:14px 0;border-bottom:1px dashed rgba(150,170,255,.2)"><span style="font-size:30px;color:#7ff0a6">01</span><div style="font-size:17px;line-height:1.5;color:#c8cee6"><span style="color:#eef0f7;font-weight:500">Cadastro:</span> você preenche seus dados em poucos minutos.</div></div>
+          <div style="display:grid;grid-template-columns:52px 1fr;gap:14px;padding:14px 0;border-bottom:1px dashed rgba(150,170,255,.2)"><span style="font-size:30px;color:#7ff0a6">02</span><div style="font-size:17px;line-height:1.5;color:#c8cee6"><span style="color:#eef0f7;font-weight:500">Perfil:</span> entendemos seu objetivo e seu apetite a risco.</div></div>
+          <div style="display:grid;grid-template-columns:52px 1fr;gap:14px;padding:14px 0;border-bottom:1px dashed rgba(150,170,255,.2)"><span style="font-size:30px;color:#7ff0a6">03</span><div style="font-size:17px;line-height:1.5;color:#c8cee6"><span style="color:#eef0f7;font-weight:500">Aporte:</span> você escolhe o valor e investe.</div></div>
+          <div style="display:grid;grid-template-columns:52px 1fr;gap:14px;padding:14px 0"><span style="font-size:30px;color:#7ff0a6">04</span><div style="font-size:17px;line-height:1.5;color:#c8cee6"><span style="color:#eef0f7;font-weight:500">Acompanhamento:</span> você vê tudo e conta com nosso time.</div></div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="font-size:14px;color:#8e97bb;letter-spacing:.04em">CONDIÇÕES</div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px">
+        <div style="display:flex;gap:8px;align-items:center;padding:12px 18px;border-radius:999px;background:rgba(10,14,34,.55);border:1px solid rgba(150,170,255,.16);font-size:15px">Aporte mínimo: <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#b9c3ff">[INSERIR]</span></div>
+        <div style="display:flex;gap:8px;align-items:center;padding:12px 18px;border-radius:999px;background:rgba(10,14,34,.55);border:1px solid rgba(150,170,255,.16);font-size:15px">Taxas: <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#b9c3ff">[INSERIR taxa de administração/performance]</span></div>
+        <div style="display:flex;gap:8px;align-items:center;padding:12px 18px;border-radius:999px;background:rgba(10,14,34,.55);border:1px solid rgba(150,170,255,.16);font-size:15px">Resgate: <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#b9c3ff">[INSERIR prazo de liquidez]</span></div>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;padding-top:32px;border-top:1px solid rgba(150,170,255,.16)">
+      <div style="display:flex;flex-direction:column;gap:8px;max-width:620px">
+        <div style="font-size:22px">O custo de não decidir</div>
+        <div style="font-size:17px;line-height:1.55;color:#b9c0dc">Dinheiro parado perde para a inflação. <span style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:12px;padding:1px 7px;border:1px dashed rgba(167,180,255,.5);border-radius:6px;color:#b9c3ff;background:rgba(120,140,255,.08)">[INSERIR comparativo com fonte e data, ex.: poupança no período]</span></div>
+      </div>
+      <a href="#" style="padding:18px 30px;border-radius:999px;background:linear-gradient(90deg,#8af5b0,#4fd383);color:#06200f;font-weight:600;font-size:17px;box-shadow:0 10px 40px rgba(79,211,131,.25)">Quero abrir minha conta</a>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Objeções" style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,40px) 100px;display:flex;flex-direction:column;gap:36px">
+  <h2 style="margin:0;font-weight:400;font-size:clamp(30px,3.6vw,46px);letter-spacing:-0.03em">Talvez você esteja pensando…</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:14px">
+    <div style="padding:28px;border-radius:26px;background:rgba(20,28,70,.4);border:1px solid rgba(150,170,255,.14);display:flex;flex-direction:column;gap:12px"><div style="font-size:21px">Mas será que é seguro?</div><p style="margin:0;font-size:16px;line-height:1.6;color:#b9c0dc;font-weight:300">Faz sentido perguntar. A Rampay é regulada, tem registro nº 1002233, 10 anos de mercado e mais de R$ 100 milhões sob gestão. Todo investimento tem risco, e te explicamos isso com clareza antes de você investir.</p></div>
+    <div style="padding:28px;border-radius:26px;background:rgba(20,28,70,.4);border:1px solid rgba(150,170,255,.14);display:flex;flex-direction:column;gap:12px"><div style="font-size:21px">Mas posso perder dinheiro?</div><p style="margin:0;font-size:16px;line-height:1.6;color:#b9c0dc;font-weight:300">Investimentos em fundos têm risco e podem oscilar. Por isso analisamos o seu perfil antes e deixamos tudo transparente: <span style="font-family:'JetBrains Mono',monospace;font-size:12px;padding:1px 6px;border:1px dashed rgba(167,180,255,.5);border-radius:6px;color:#b9c3ff">[INSERIR: diversificação/estratégia de gestão de risco]</span>. Você decide com informação.</p></div>
+    <div style="padding:28px;border-radius:26px;background:rgba(20,28,70,.4);border:1px solid rgba(150,170,255,.14);display:flex;flex-direction:column;gap:12px"><div style="font-size:21px">Mas eu já invisto em outro lugar.</div><p style="margin:0;font-size:16px;line-height:1.6;color:#b9c0dc;font-weight:300">Ótimo, você já deu o primeiro passo. Não precisa mudar tudo. Dá pra começar com uma parte e comparar com calma.</p></div>
+    <div style="padding:28px;border-radius:26px;background:rgba(20,28,70,.4);border:1px solid rgba(150,170,255,.14);display:flex;flex-direction:column;gap:12px"><div style="font-size:21px">Mas eu não entendo nada de investimentos.</div><p style="margin:0;font-size:16px;line-height:1.6;color:#b9c0dc;font-weight:300">Tudo bem, a maioria dos nossos clientes começou assim. Você conversa com um especialista e entende cada passo antes de investir.</p></div>
+    <div style="padding:28px;border-radius:26px;background:rgba(20,28,70,.4);border:1px solid rgba(150,170,255,.14);display:flex;flex-direction:column;gap:12px"><div style="font-size:21px">Mas preciso de muito dinheiro?</div><p style="margin:0;font-size:16px;line-height:1.6;color:#b9c0dc;font-weight:300">Não. O aporte mínimo é <span style="font-family:'JetBrains Mono',monospace;font-size:12px;padding:1px 6px;border:1px dashed rgba(167,180,255,.5);border-radius:6px;color:#b9c3ff">[INSERIR]</span>. Comece no seu ritmo.</p></div>
+  </div>
+</section>
+
+<section data-screen-label="Garantia" style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,40px) 100px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:40px;align-items:start">
+  <div style="display:flex;flex-direction:column;gap:16px">
+    <div style="font-size:14px;color:#7ff0a6;letter-spacing:.04em">GARANTIA</div>
+    <h2 style="margin:0;font-weight:400;font-size:clamp(26px,3vw,38px);letter-spacing:-0.03em;line-height:1.2;text-wrap:pretty">Não prometemos o que nenhum investimento sério pode prometer. Nossa garantia é de transparência:</h2>
+  </div>
+  <div style="padding:26px;border-radius:28px;background:rgba(20,28,70,.45);border:1px solid rgba(150,170,255,.16);display:flex;flex-direction:column;gap:16px">
+    <div style="display:flex;gap:14px;align-items:center;font-size:17px"><span style="flex:none;width:20px;height:20px;border-radius:50%;background:#5bd88a;color:#06200f;font-size:12px;display:flex;align-items:center;justify-content:center;font-weight:600">✓</span>Empresa regulada, com registro nº 1002233</div>
+    <div style="display:flex;gap:14px;align-items:center;font-size:17px"><span style="flex:none;width:20px;height:20px;border-radius:50%;background:#5bd88a;color:#06200f;font-size:12px;display:flex;align-items:center;justify-content:center;font-weight:600">✓</span>Regulamento e lâmina do fundo disponíveis antes do aporte</div>
+    <div style="display:flex;gap:14px;align-items:center;font-size:17px"><span style="flex:none;width:20px;height:20px;border-radius:50%;background:#5bd88a;color:#06200f;font-size:12px;display:flex;align-items:center;justify-content:center;font-weight:600">✓</span>Acompanhamento claro do seu investimento</div>
+    <div style="display:flex;gap:14px;align-items:center;font-size:17px"><span style="flex:none;width:20px;height:20px;border-radius:50%;background:#5bd88a;color:#06200f;font-size:12px;display:flex;align-items:center;justify-content:center;font-weight:600">✓</span>Atendimento humano quando você precisar</div>
+    <div style="display:flex;gap:14px;align-items:center;font-size:17px"><span style="flex:none;width:20px;height:20px;border-radius:50%;background:#5bd88a;color:#06200f;font-size:12px;display:flex;align-items:center;justify-content:center;font-weight:600">✓</span><span style="font-family:'JetBrains Mono',monospace;font-size:12.5px;padding:2px 8px;border:1px dashed rgba(167,180,255,.5);border-radius:6px;color:#b9c3ff">[INSERIR: condições de resgate]</span></div>
+  </div>
+</section>
+
+<section data-screen-label="Urgência" style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,40px) 100px">
+  <div style="padding:clamp(28px,4vw,44px);border-radius:30px;background:linear-gradient(90deg,rgba(127,240,166,.14),rgba(20,28,70,.5));border:1px solid rgba(127,240,166,.25);display:flex;flex-direction:column;gap:12px">
+    <div style="font-size:clamp(22px,2.6vw,32px);letter-spacing:-0.02em;line-height:1.25">Cada mês com o dinheiro parado é um mês a menos de investimento trabalhando.</div>
+    <div style="font-size:18px;color:#c8cee6">Abra sua conta hoje e comece no seu ritmo.</div>
+    <span style="align-self:flex-start;font-family:'JetBrains Mono',monospace;font-size:12px;padding:2px 8px;border:1px dashed rgba(167,180,255,.5);border-radius:6px;color:#b9c3ff">[INSERIR: prazo, condição ou benefício real, se existir]</span>
+  </div>
+</section>
+
+<section data-screen-label="FAQ" style="max-width:900px;margin:0 auto;padding:0 clamp(20px,4vw,40px) 100px;display:flex;flex-direction:column;gap:28px">
+  <h2 style="margin:0;font-weight:400;font-size:clamp(30px,3.6vw,46px);letter-spacing:-0.03em">Perguntas frequentes</h2>
+  <div style="display:flex;flex-direction:column;gap:10px">
+    <details style="padding:20px 24px;border-radius:20px;background:rgba(20,28,70,.4);border:1px solid rgba(150,170,255,.14)"><summary style="cursor:pointer;display:flex;justify-content:space-between;gap:16px;font-size:18px">Quanto tempo preciso dedicar?<span class="faq-plus" style="color:#7ff0a6;transition:transform .2s">+</span></summary><p style="margin:14px 0 0;font-size:16px;line-height:1.6;color:#b9c0dc">Quase nenhum. O cadastro é rápido e a gestão fica com a nossa equipe.</p></details>
+    <details style="padding:20px 24px;border-radius:20px;background:rgba(20,28,70,.4);border:1px solid rgba(150,170,255,.14)"><summary style="cursor:pointer;display:flex;justify-content:space-between;gap:16px;font-size:18px">Serve pra quem nunca investiu?<span class="faq-plus" style="color:#7ff0a6;transition:transform .2s">+</span></summary><p style="margin:14px 0 0;font-size:16px;line-height:1.6;color:#b9c0dc">Sim. Analisamos seu perfil e explicamos cada passo.</p></details>
+    <details style="padding:20px 24px;border-radius:20px;background:rgba(20,28,70,.4);border:1px solid rgba(150,170,255,.14)"><summary style="cursor:pointer;display:flex;justify-content:space-between;gap:16px;font-size:18px">E se eu quiser tirar meu dinheiro?<span class="faq-plus" style="color:#7ff0a6;transition:transform .2s">+</span></summary><p style="margin:14px 0 0;font-family:'JetBrains Mono',monospace;font-size:13px;color:#b9c3ff">[INSERIR: regras e prazo de resgate]</p></details>
+    <details style="padding:20px 24px;border-radius:20px;background:rgba(20,28,70,.4);border:1px solid rgba(150,170,255,.14)"><summary style="cursor:pointer;display:flex;justify-content:space-between;gap:16px;font-size:18px">O rendimento é garantido?<span class="faq-plus" style="color:#7ff0a6;transition:transform .2s">+</span></summary><p style="margin:14px 0 0;font-size:16px;line-height:1.6;color:#b9c0dc">Não. Fundos de investimento não têm rentabilidade fixa nem garantia. O “até 16% ao ano” tem a base explicada na página e a rentabilidade passada não garante a futura.</p></details>
+    <details style="padding:20px 24px;border-radius:20px;background:rgba(20,28,70,.4);border:1px solid rgba(150,170,255,.14)"><summary style="cursor:pointer;display:flex;justify-content:space-between;gap:16px;font-size:18px">Tem suporte?<span class="faq-plus" style="color:#7ff0a6;transition:transform .2s">+</span></summary><p style="margin:14px 0 0;font-size:16px;line-height:1.6;color:#b9c0dc">Sim, com atendimento humano por <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#b9c3ff">[INSERIR canais]</span>.</p></details>
+    <details style="padding:20px 24px;border-radius:20px;background:rgba(20,28,70,.4);border:1px solid rgba(150,170,255,.14)"><summary style="cursor:pointer;display:flex;justify-content:space-between;gap:16px;font-size:18px">Qual o valor mínimo?<span class="faq-plus" style="color:#7ff0a6;transition:transform .2s">+</span></summary><p style="margin:14px 0 0;font-family:'JetBrains Mono',monospace;font-size:13px;color:#b9c3ff">[INSERIR]</p></details>
+    <details style="padding:20px 24px;border-radius:20px;background:rgba(20,28,70,.4);border:1px solid rgba(150,170,255,.14)"><summary style="cursor:pointer;display:flex;justify-content:space-between;gap:16px;font-size:18px">Quais as taxas?<span class="faq-plus" style="color:#7ff0a6;transition:transform .2s">+</span></summary><p style="margin:14px 0 0;font-family:'JetBrains Mono',monospace;font-size:13px;color:#b9c3ff">[INSERIR]</p></details>
+  </div>
+</section>
+
+<section data-screen-label="CTA final" style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,40px) 80px">
+  <div style="padding:clamp(36px,6vw,80px);border-radius:40px;background:radial-gradient(600px 300px at 50% 0%, rgba(127,240,166,.18), transparent 70%), linear-gradient(180deg,rgba(38,54,140,.55),rgba(12,16,40,.6));border:1px solid rgba(150,170,255,.22);display:flex;flex-direction:column;align-items:center;text-align:center;gap:22px">
+    <h2 style="margin:0;font-weight:400;font-size:clamp(30px,4.2vw,56px);letter-spacing:-0.035em;line-height:1.08;max-width:860px;text-wrap:balance">Daqui a um ano, você pode estar na mesma situação, ou pode ter dado o primeiro passo hoje.</h2>
+    <p style="margin:0;font-size:19px;line-height:1.55;color:#c8cee6;max-width:620px;font-weight:300">Abrir sua conta leva poucos minutos. A decisão de cuidar do seu dinheiro começa agora.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:8px">
+      <a href="#" style="padding:18px 30px;border-radius:999px;background:linear-gradient(90deg,#8af5b0,#4fd383);color:#06200f;font-weight:600;font-size:17px;box-shadow:0 10px 40px rgba(79,211,131,.25)">Quero abrir minha conta</a>
+      <a href="#" style="padding:18px 30px;border-radius:999px;border:1px solid rgba(150,170,255,.3);background:rgba(10,14,34,.5);color:#eef0f7;font-size:17px">Falar com especialista</a>
+    </div>
+  </div>
+</section>
+
+<footer data-screen-label="PS e rodapé" style="max-width:900px;margin:0 auto;padding:0 clamp(20px,4vw,40px) 60px;display:flex;flex-direction:column;gap:32px">
+  <p style="margin:0;font-size:19px;line-height:1.6;color:#c8cee6;font-weight:300"><span style="color:#7ff0a6;font-weight:500">PS:</span> Mais de 10 mil pessoas já decidiram parar de adiar. Você não precisa entender de mercado, só dar o primeiro passo. A Rampay cuida do resto, com 10 anos de experiência e transparência.</p>
+  <a href="#" style="align-self:flex-start;padding:16px 26px;border-radius:999px;background:linear-gradient(90deg,#8af5b0,#4fd383);color:#06200f;font-weight:600;font-size:16px">Quero abrir minha conta</a>
+  <div style="padding-top:28px;border-top:1px solid rgba(150,170,255,.16);display:flex;flex-direction:column;gap:14px">
+    <p style="margin:0;font-size:14px;line-height:1.65;color:#aab3d6">Rentabilidade passada não representa garantia de rentabilidade futura. Fundos de investimento não contam com garantia do administrador, do gestor, de qualquer mecanismo de seguro ou do FGC. Leia a lâmina e o regulamento antes de investir.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:8px 20px;font-size:13px;color:#8e97bb"><span>© Rampay • Registro nº 1002233</span><a href="#">Política de privacidade</a></div>
+  </div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;headline&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;A — Dor&quot;,&quot;B — Autoridade&quot;,&quot;C — Benefício&quot;],&quot;default&quot;:&quot;A — Dor&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Teste A/B&quot;},&quot;ctaVariant&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Quero abrir minha conta&quot;,&quot;Começar a investir hoje&quot;],&quot;default&quot;:&quot;Quero abrir minha conta&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Teste A/B&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const h = this.props.headline ?? 'A — Dor';
+    const c = this.props.ctaVariant ?? 'Quero abrir minha conta';
+    return {
+      hA: h.startsWith('A'), hB: h.startsWith('B'), hC: h.startsWith('C'),
+      cta1: c === 'Quero abrir minha conta', cta2: c !== 'Quero abrir minha conta',
+    };
+  }
+}
+</script>
+</body>
+</html>
